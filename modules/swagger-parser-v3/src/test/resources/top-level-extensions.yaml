@@ -1,0 +1,16 @@
+openapi: 3.0.3
+info:
+  title: Missing validation rule for schemas in Headers.
+  version: 1.0.0
+servers:
+- url: /
+x-codegen-contextRoot: "it's supported"
+paths:
+  /foo:
+    get:
+      description: ok
+      responses:
+        default:
+          description: ok
+        '200':
+          description: successful operation

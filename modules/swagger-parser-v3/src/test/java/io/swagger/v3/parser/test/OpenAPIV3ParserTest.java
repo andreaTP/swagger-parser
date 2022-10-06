@@ -128,6 +128,17 @@ public class OpenAPIV3ParserTest {
 
     }
 
+    @Test
+    public void testIssueAndreaTP() throws Exception{
+        ParseOptions options = new ParseOptions();
+        SwaggerParseResult result = new OpenAPIV3Parser().readLocation("src/test/resources/top-level-extensions.yaml", null, options);
+
+        Assert.assertNotNull(result);
+        Assert.assertNotNull(result.getOpenAPI());
+
+        assertEquals(result.getOpenAPI().getExtensions().get("x-codegen-contextRoot"), "it's supported");
+    }
+
     @Test(description = "Test for not setting the schema type as default")
     public void testNotDefaultSchemaType() {
         ParseOptions options = new ParseOptions();
